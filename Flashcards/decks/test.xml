@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<deck>
+    <card front="Hola" back = "Hello"></card>
+    <card front="Como Estas?" back = "How are you?"></card>
+    <card front="Voy a cortarle la cabeza." back = "I am going to cut off your head"></card>
+</deck>

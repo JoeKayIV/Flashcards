@@ -1,0 +1,57 @@
+Creating a new deck:
+------------------------------------------------------------------------------------------
+1. Create a new xml file in the decks folder and call it whatever you would like the name
+of the deck to be. It is recommended that you copy an existing deck and rename it.
+
+2. Open the xml file in a text editor. Notepad will work, but Notepad++ is recommended.
+
+3. If you are creating a new xml file instead of copying one, then copy and paste the 
+following code into the file:
+
+    <?xml version="1.0"?>
+    <deck>
+        <card front="" back = ""></card>
+    </deck>
+
+4. Quick note about cards: The front is the side that the user is to be quizzed on, and 
+the back is the "answer" that the user must guess.
+
+5. Place the text that you want to be on the front in the quotes in front of front, and
+do the same for the back:
+
+    <?xml version="1.0"?>
+    <deck>
+        <card front="Hola" back = "Hello"></card>
+    </deck>
+
+6. Congratulations! You have added your first card! To add more, simply copy the card line
+and change the front and back text like you did before:
+
+    <?xml version="1.0"?>
+    <deck>
+        <card front="Hola" back = "Hello"></card>
+        <card front="Como Estas?" back = "How are you?"></card>
+        <card front="Voy a cortarle la cabeza." back = "I am going to cut off your head"></card>
+    </deck>
+
+
+
+Running the Quiz:
+------------------------------------------------------------------------------------------
+1. Double-click on the file "Flashcards.jar" to open the program.
+
+2. Enter the name of your deck in the text box. If the name that you type doesn't exist,
+the computer will get mad at you and say that the file is invalid.
+
+3. When the quiz starts, you will see the first card. Your job is to try and guess what's
+on the other side of that card. Type your answer in the text box and hit enter (or click
+the "Next" button).
+
+4. The program will tell you whether you were right or wrong, and correct you if you were
+wrong. Hit the enter key or hit next again to move on to the next card. Repeat this
+process until you've gone through the entire deck.
+
+5. When you're done, you have the option to either quiz yourself on the entire deck,
+quiz yourself on just the cards you got wrong, or quit the program. Click whichever button
+corresponds to your selection, or hit enter to quiz yourself on the wrongly answered
+cards.
