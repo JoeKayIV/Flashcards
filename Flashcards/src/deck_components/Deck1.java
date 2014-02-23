@@ -126,14 +126,6 @@ public class Deck1 implements Deck {
     }
 
     @Override
-    public final void flipCards() {
-        assert this != null : "Violation of: this is not null.";
-        for (Card c : this.rep) {
-            c.flip();
-        }
-    }
-
-    @Override
     public final void shuffle() {
         assert this != null : "Violation of: this is not null.";
         if (this.size() > 1) {

@@ -122,13 +122,6 @@ public class Deck2 implements Deck {
     }
 
     @Override
-    public final void flipCards() {
-        for (Card c : this.rep) {
-            c.flip();
-        }
-    }
-
-    @Override
     public final void shuffle() {
         if (this.size() > 1) {
             mergeShuffle(this.rep);

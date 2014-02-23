@@ -56,14 +56,6 @@ public interface Deck extends Iterable<Card> {
     Card draw();
 
     /**
-     * Goes through every card in the deck and switches the front and back
-     * sides.
-     * 
-     * @ensures [All Cards in {@code this} are flipped]
-     */
-    void flipCards();
-
-    /**
      * Changes the order of the cards in this.
      * 
      * @ensures {@code #this != this}

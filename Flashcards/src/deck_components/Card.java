@@ -1,7 +1,5 @@
 package deck_components;
 
-import javax.swing.JLabel;
-
 /**
  * Interface for a card.
  * 
@@ -53,18 +51,6 @@ public interface Card {
      *            The new "back" of the card.
      */
     void setBack(String text);
-
-    /**
-     * Switches the "front" and "back" of the card.
-     */
-    void flip();
-
-    /**
-     * Returns {@code this} represented as an a JLabel.
-     * 
-     * @return
-     */
-    JLabel getLabel();
 
     /**
      * Returns {@code this} represented as a String.

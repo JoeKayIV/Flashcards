@@ -1,8 +1,9 @@
 package flashcards;
 
-import quiz.QuizController;
-import quiz.QuizModel;
-import quiz.QuizView;
+import quiz_components.DeckSelectWindow;
+import quiz_components.QuizController;
+import quiz_components.QuizModel;
+import quiz_components.QuizView;
 import deck_components.Deck;
 import deck_components.Deck3;
 

@@ -3,7 +3,6 @@ package deck_components;
 import java.awt.Font;
 
 import javax.swing.ImageIcon;
-import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 
@@ -24,10 +23,6 @@ public class Card1 implements Card {
 
     private String fronthtml;
     private String backhtml;
-    /**
-     * The image representation of this.
-     */
-    private final JLabel img;
 
     /**
      * Constructor Method.
@@ -42,7 +37,7 @@ public class Card1 implements Card {
          * For some weird reason, assert statements do not throw assertion
          * errors in the exported program. Either that or DeckSelectWindow can't
          * read them in the try statement in the filLookup method. However,
-         * doing it manually like this does work.
+         * doing it manually like this works.
          */
         if (f.length() > 150 || b.length() > 150) {
             throw new AssertionError("Violation of: String length <= 150");
@@ -50,13 +45,8 @@ public class Card1 implements Card {
         this.front = f;
         this.back = b;
 
-        this.fronthtml = gethtmlWithBreaks(this.front);
-        this.backhtml = gethtmlWithBreaks(this.back);
-        ImageIcon icon = new ImageIcon("img/card.png");
-        this.img = new JLabel(this.fronthtml, icon, SwingConstants.CENTER);
-        this.img.setFont(new Font("Card Font", Font.BOLD, 24));
-        this.img.setVerticalTextPosition(SwingConstants.CENTER);
-        this.img.setHorizontalTextPosition(SwingConstants.CENTER);
+        this.fronthtml = gethtml(this.front);
+        this.backhtml = gethtml(this.back);
     }
 
     @Override
@@ -94,72 +84,16 @@ public class Card1 implements Card {
         this.back = text;
     }
 
-    @Override
-    public final void flip() {
-        String temp = this.front;
-        this.front = this.back;
-        this.back = temp;
-
-        temp = this.fronthtml;
-        this.fronthtml = this.backhtml;
-        this.backhtml = temp;
+    public static JLabel getCardImage() {
+        ImageIcon icon = new ImageIcon("img/card.png");
+        JLabel img = new JLabel("", icon, SwingConstants.CENTER);
+        img.setFont(new Font("Card Font", Font.BOLD, 24));
+        img.setVerticalTextPosition(SwingConstants.CENTER);
+        img.setHorizontalTextPosition(SwingConstants.CENTER);
+        return img;
     }
 
-    @Override
-    public final JLabel getLabel() {
-        return this.img;
-    }
-
-    private static String gethtmlWithBreaks(String text) {
+    private static String gethtml(String text) {
         return "<html><center>" + text + "</center></html>";
-    }
-
-    private static String gethtmlWithBreaks2(String text) {
-        String html = "<html><center>";
-        String line = "";
-        String temp = "";
-        int index = 0;
-        JFrame widthTesterFrame = new JFrame();
-        JLabel widthTesterLabel = new JLabel();
-        widthTesterLabel.setFont(new Font("Card Font", Font.BOLD, 24));
-        widthTesterFrame.add(widthTesterLabel);
-        widthTesterFrame.pack();
-        while (index < text.length()) {
-            String s = nextWordOrSeparator(text, index);
-            index += s.length();
-
-            temp = line.concat(s);
-            widthTesterLabel.setText(temp);
-            widthTesterFrame.pack();
-            int width = widthTesterFrame.getWidth();
-            if (width > 450) {
-                html = html.concat(s + "</center><center>");
-                line = s;
-            } else {
-                html = html.concat(s);
-            }
-
-        }
-        return html + "</center></html>";
-    }
-
-    private static String nextWordOrSeparator(String text, int index) {
-        String next = "";
-        char nextChar = text.charAt(index);
-        if (nextChar == ' ') {
-            next = next.concat(String.valueOf(nextChar));
-        } else {
-            int i = index;
-            while (nextChar != ' ') {
-                next = next.concat(String.valueOf(nextChar));
-                i++;
-                if (i == text.length()) {
-                    nextChar = ' ';
-                } else {
-                    nextChar = text.charAt(i);
-                }
-            }
-        }
-        return next;
     }
 }

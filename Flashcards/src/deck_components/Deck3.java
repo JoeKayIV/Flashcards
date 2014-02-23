@@ -161,15 +161,6 @@ public class Deck3 implements Deck {
     }
 
     @Override
-    public final void flipCards() {
-        Iterator<Card> i = this.iterator();
-        while (i.hasNext()) {
-            Card c = i.next();
-            c.flip();
-        }
-    }
-
-    @Override
     public final void shuffle() {
         if (this.size() > 1) {
             mergeShuffle(this);
