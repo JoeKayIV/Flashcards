@@ -6,6 +6,12 @@ Flashcards Alpha version 1.0.2
 
     Version History:
     ---------------------------------------------------------------------------
+    Alpha 1.0.3- Made Quiz Again Window look nicer.
+    
+                 Fixed a bug that causes the entire application to close when 
+                 X-ing out of the error window
+                 
+                 Other minor improvements.
     Alpha 1.0.2- Added option to quiz with a different deak to the end of 
                  quiz window.
                  
